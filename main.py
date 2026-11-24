@@ -50,21 +50,21 @@ def fila_parametros(clave_p, clave_q, clave_e, sufijo):
         st.session_state[clave_p] = st.text_input(
             "p:",
             value=st.session_state[clave_p],
-            key=f"p_{sufijo}",
+            key=f"in_{clave_p}_{sufijo}",
         )
 
     with c2:
         st.session_state[clave_q] = st.text_input(
             "q:",
             value=st.session_state[clave_q],
-            key=f"q_{sufijo}",
+            key=f"in_{clave_q}_{sufijo}",
         )
 
     with c3:
         st.session_state[clave_e] = st.text_input(
             "e:",
             value=st.session_state[clave_e],
-            key=f"e_{sufijo}",
+            key=f"in_{clave_e}_{sufijo}",
         )
 
 
@@ -97,7 +97,7 @@ def panel_encriptar():
             "Mensaje M:",
             value=st.session_state["mensaje_enc"],
             height=85,
-            key="txt_m_enc",
+            key="in_txt_m_enc",
         )
         fila_parametros("p", "q", "e", "enc")
 
@@ -193,12 +193,12 @@ def panel_desencriptar():
             "Cifrado C:",
             value=st.session_state["cifrado_dec"],
             height=85,
-            key="txt_c_dec",
+            key="in_txt_c_dec",
         )
         st.session_state["L_dec"] = st.text_input(
             "Longitud L:",
             value=st.session_state["L_dec"],
-            key="txt_l_dec",
+            key="in_txt_l_dec",
         )
         fila_parametros("p_dec", "q_dec", "e_dec", "dec")
 
@@ -290,7 +290,7 @@ def main():
         index=0 if st.session_state["pestana"] == "Encriptar" else 1,
         horizontal=True,
         label_visibility="collapsed",
-        key="radio_pestana",
+        key="in_radio_pestana",
     )
     if seleccion != st.session_state["pestana"]:
         st.session_state["pestana"] = seleccion
