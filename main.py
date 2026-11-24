@@ -45,17 +45,26 @@ def leer_parametros(p_str, q_str, e_str):
 def fila_parametros(clave_p, clave_q, clave_e, sufijo):
     st.markdown("**Parámetros:**")
     c1, c2, c3 = st.columns(3)
+
     with c1:
         st.session_state[clave_p] = st.text_input(
-            "p:", value=st.session_state[clave_p], key=f"p_{sufijo}"
+            "p:",
+            value=st.session_state[clave_p],
+            key=f"p_{sufijo}",
         )
+
     with c2:
         st.session_state[clave_q] = st.text_input(
-            "q:", value=st.session_state[clave_q], key=f"q_{sufijo}"
+            "q:",
+            value=st.session_state[clave_q],
+            key=f"q_{sufijo}",
         )
+
     with c3:
         st.session_state[clave_e] = st.text_input(
-            "e:", value=st.session_state[clave_e], key=f"e_{sufijo}"
+            "e:",
+            value=st.session_state[clave_e],
+            key=f"e_{sufijo}",
         )
 
 
